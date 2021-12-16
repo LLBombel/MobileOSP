@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg2"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:gravity="center">
+
+
+
+    <Button
+        android:id="@+id/bt_Members"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/ButtonsColor"
+        android:drawableTop="@drawable/ic_members"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/czlonkowie"
+        android:textColor="@color/TextColor"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/bt_Cars"
+        android:backgroundTint="@color/ButtonsColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_cars"
+        android:text="@string/samochody"
+        android:textColor="@color/TextColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_Equipment"
+        android:backgroundTint="@color/ButtonsColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_equipment"
+        android:text="@string/sprzet"
+        android:textColor="@color/TextColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_Money"
+        android:backgroundTint="@color/ButtonsColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_money"
+        android:text="@string/kasa"
+        android:textColor="@color/TextColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

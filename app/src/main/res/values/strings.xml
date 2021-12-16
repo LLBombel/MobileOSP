@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MobileOSP</string>
+    <string name="czlonkowie">Członkowie</string>
+    <string name="samochody">Samochody</string>
+    <string name="sprzet">Sprzęt</string>
+    <string name="kasa">Kasa</string>
+    <string name="obroty_finansowe">Obroty finansowe</string>
+    <string name="skladki">Składki</string>
+</resources>
