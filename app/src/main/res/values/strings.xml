@@ -11,4 +11,5 @@
     <string name="dodaj">DODAJ</string>
     <string name="anuluj">Anuluj</string>
     <string name="dodaj_samoch_d">Dodaj samochód</string>
+    <string name="dodaj_sprz_t">Dodaj sprzęt</string>
 </resources>

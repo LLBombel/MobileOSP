@@ -1,9 +1,11 @@
 package com.rafalropel.mobileosp
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.rafalropel.mobileosp.databinding.ActivityEquipmentBinding
+import com.rafalropel.mobileosp.databinding.AddEquipmentDialogBinding
 
 private lateinit var binding: ActivityEquipmentBinding
 class EquipmentActivity : AppCompatActivity() {
@@ -12,10 +14,29 @@ class EquipmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding.fabAddEquipment.setOnClickListener {
-            Toast.makeText(this, "Już niedługo będzie można dodawać sprzęt", Toast.LENGTH_SHORT).show()
+            addEquipmentDialog()
         }
 
 
         setContentView(binding.root)
+    }
+
+
+    private fun addEquipmentDialog(){
+        val addEquipmentDialog = Dialog(this, R.style.Theme_AppCompat_Dialog)
+        val binding = AddEquipmentDialogBinding.inflate(layoutInflater)
+        addEquipmentDialog.setContentView(binding.root)
+        addEquipmentDialog.setCancelable(false)
+
+
+        binding.btAddEquipment.setOnClickListener {
+            Toast.makeText(this, "Już prawie", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btAddEquipmentCancel.setOnClickListener {
+            addEquipmentDialog.dismiss()
+        }
+
+        addEquipmentDialog.show()
     }
 }
