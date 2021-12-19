@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/DialogBackgroundColor">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dodaj_cz_onka"
+        android:textSize="25sp"
+        android:textColor="@color/TextColor"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_MemberName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMemberName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imię i nazwisko"
+            android:textSize="15sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/til_Rank"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:boxStrokeColor="@color/BoxStrokeColor"
+    app:hintTextColor="@color/LightGray"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etRank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Stopień"
+        android:textSize="15sp"
+        />
+
+</com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_DateOfBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etDateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data urodzenia"
+            android:textSize="15sp"
+            android:inputType="number"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/til_PlaceOfBirth"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:boxStrokeColor="@color/BoxStrokeColor"
+    app:hintTextColor="@color/LightGray"
+    android:layout_margin="10dp"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    >
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPlaceOfBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Miejsce urodzenia"
+        android:textSize="15sp"
+        />
+
+</com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_FatherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        android:layout_margin="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etFatherName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imię ojca"
+            android:textSize="15sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_PESEL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPESEL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PESEL"
+            android:textSize="15sp"
+            android:inputType="numberDecimal"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_DateofJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:hintTextColor="@color/LightGray"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etDateOfJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data dołączenia do jednostki"
+            android:inputType="number"
+            android:textSize="15sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_TypeOfMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etTypeOfMember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rodzaj członka, np. czynny"
+            android:textSize="15sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dane_kontaktowe_i_adresowe"
+        android:textSize="25sp"
+        android:textColor="@color/TextColor"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        >
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:hint="Adres e-mail"
+            android:inputType="textEmailAddress"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_PhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintTextColor="@color/LightGray"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Numer telefonu"
+            android:textSize="15sp"
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Miejscowość"
+            android:textSize="15sp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_Street"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ulica"
+            android:textSize="15sp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_HouseNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etHouseNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numer domu"
+            android:textSize="15sp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_ApartmentNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etApartmentNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numer lokalu"
+            android:textSize="15sp"
+            android:inputType="number"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btAddMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/ButtonsColor"
+            android:text="@string/dodaj"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/TextColor"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            />
+
+        <Button
+            android:id="@+id/btAddMemberCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/ButtonsColor"
+            android:text="@string/anuluj"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/TextColor"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>

@@ -6,4 +6,8 @@
     <string name="kasa">Kasa</string>
     <string name="obroty_finansowe">Obroty finansowe</string>
     <string name="skladki">Składki</string>
+    <string name="dodaj_cz_onka">Dodaj członka</string>
+    <string name="dane_kontaktowe_i_adresowe">Dane kontaktowe i adresowe</string>
+    <string name="dodaj">DODAJ</string>
+    <string name="anuluj">Anuluj</string>
 </resources>
