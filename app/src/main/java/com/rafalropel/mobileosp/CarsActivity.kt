@@ -26,7 +26,7 @@ class CarsActivity : AppCompatActivity() {
     }
 
     private fun addCarDialog(){
-        val addCarDialog = Dialog(this, R.style.Theme_AppCompat_Dialog)
+        val addCarDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
         addCarDialog.setCancelable(false)
         val binding = AddCarDialogBinding.inflate(layoutInflater)
         addCarDialog.setContentView(binding.root)

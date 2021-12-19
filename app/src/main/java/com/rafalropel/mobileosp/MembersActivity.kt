@@ -27,7 +27,8 @@ class MembersActivity : AppCompatActivity() {
 
 
     private fun addMemberDialog(){
-        val addMemberDialog = Dialog(this, R.style.Theme_AppCompat_Dialog)
+        val addMemberDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
+       
         addMemberDialog.setCancelable(false)
         val binding = AddMemberDialogBinding.inflate(layoutInflater)
         addMemberDialog.setContentView(binding.root)

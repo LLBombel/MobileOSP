@@ -23,7 +23,7 @@ class EquipmentActivity : AppCompatActivity() {
 
 
     private fun addEquipmentDialog(){
-        val addEquipmentDialog = Dialog(this, R.style.Theme_AppCompat_Dialog)
+        val addEquipmentDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
         val binding = AddEquipmentDialogBinding.inflate(layoutInflater)
         addEquipmentDialog.setContentView(binding.root)
         addEquipmentDialog.setCancelable(false)
