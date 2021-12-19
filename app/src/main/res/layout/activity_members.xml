@@ -7,13 +7,13 @@
     android:background="@drawable/ic_bg2"
     tools:context=".MainActivity">
 
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/fab_addMembers"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|end"
-    android:src="@drawable/ic_fab"
-    android:layout_margin="25dp"
-    android:backgroundTint="@color/FabColor"
-    />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_addMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="25dp"
+        android:backgroundTint="@color/FabColor"
+        android:src="@drawable/ic_fab"
+        tools:ignore="SpeakableTextPresentCheck" />
 </FrameLayout>
