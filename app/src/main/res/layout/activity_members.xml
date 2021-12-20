@@ -7,6 +7,18 @@
     android:background="@drawable/ic_bg2"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tvMembersNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:text="Brak dodanych członków"
+        android:textColor="@color/TextColor"
+        />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addMembers"
         android:layout_width="wrap_content"

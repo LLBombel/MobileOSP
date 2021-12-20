@@ -8,6 +8,18 @@
     android:background="@drawable/ic_bg2">
 
 
+    <TextView
+        android:id="@+id/tvEquipmentNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:text="Brak dodanego sprzętu"
+        android:textColor="@color/TextColor"
+        />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addEquipment"
         android:layout_width="wrap_content"
