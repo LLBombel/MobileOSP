@@ -3,168 +3,94 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/DialogBackgroundColor"
-    android:orientation="vertical">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/DialogBackgroundColor"
+        android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/dodaj_sprz_t"
+        android:text="@string/dodaj_sk_adk"
+        android:textColor="@color/TextColor"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/TextColor"
         android:gravity="center"
         android:layout_marginTop="15dp"
         />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentName"
+        android:id="@+id/til_NameSurname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:boxStrokeColor="@color/BoxStrokeColor"
         app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
+        >
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentName"
+            android:id="@+id/etNameSurname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nazwa"
+            android:hint="Imię i nazwisko/nazwa przedsiębiorstwa"
             android:textSize="15sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentOwnName"
+        android:id="@+id/til_DeclarationDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:boxStrokeColor="@color/BoxStrokeColor"
         app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
+        >
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentOwnName"
+            android:id="@+id/etDeclarationDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nazwa własna"
+            android:inputType="number"
+            android:hint="Data podpisania deklaracji (członkowie wspierający)"
             android:textSize="15sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentAmount"
+        android:id="@+id/til_MoneyDeclared"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:boxStrokeColor="@color/BoxStrokeColor"
         app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
+        >
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentamount"
+            android:id="@+id/etMoneyDeclared"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ilość"
+            android:hint="Kwota zadeklarowana(członkowie wspierający)"
             android:inputType="number"
             android:textSize="15sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentStorageLocation"
+        android:id="@+id/til_Year"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:boxStrokeColor="@color/BoxStrokeColor"
         app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
+        >
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentStorageLocation"
+            android:id="@+id/etYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Miejsce przechowywania"
-            android:textSize="15sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentYear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/BoxStrokeColor"
-        app:hintTextColor="@color/LightGray"
-        android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentYear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Rok produkcji"
-            android:textSize="15sp"
-            android:inputType="number"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentSerialNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/BoxStrokeColor"
-        app:hintTextColor="@color/LightGray"
-        android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentSerialNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Numer seryjny"
-            android:textSize="15sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentInventoryNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/BoxStrokeColor"
-        app:hintTextColor="@color/LightGray"
-        android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentInventoryNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Numer inwentarzowy"
-            android:textSize="15sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentTechnicalReviewDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/BoxStrokeColor"
-        app:hintTextColor="@color/LightGray"
-        android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentTechnicalReviewDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Data ważności przeglądu"
+            android:hint="Rok"
             android:inputType="number"
             android:textSize="15sp"/>
 
@@ -172,19 +98,39 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_EquipmentPower"
+        android:id="@+id/til_Date"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:boxStrokeColor="@color/BoxStrokeColor"
         app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
+        >
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etEquipmentPower"
+            android:id="@+id/etDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Moc"
+            android:hint="Data wpłaty"
+            android:inputType="number"
+            android:textSize="15sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_MoneyAmount"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:boxStrokeColor="@color/BoxStrokeColor"
+        app:hintTextColor="@color/LightGray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_margin="10dp"
+        >
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMoneyAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kwota"
+            android:inputType="number"
             android:textSize="15sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -198,7 +144,7 @@
 
 
         <Button
-            android:id="@+id/btAddEquipment"
+            android:id="@+id/btAddDue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/ButtonsColor"
@@ -214,7 +160,7 @@
             android:layout_weight="1"
             />
         <Button
-            android:id="@+id/btAddEquipmentCancel"
+            android:id="@+id/btAddDCancelCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/ButtonsColor"

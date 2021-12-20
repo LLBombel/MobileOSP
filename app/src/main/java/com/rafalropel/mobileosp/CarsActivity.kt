@@ -33,6 +33,7 @@ class CarsActivity : AppCompatActivity() {
 
         binding.btAddCar.setOnClickListener {
             Toast.makeText(this, "Już prawie", Toast.LENGTH_SHORT).show()
+            addCarDialog.dismiss()
         }
 
         binding.btAddCarCancel.setOnClickListener {

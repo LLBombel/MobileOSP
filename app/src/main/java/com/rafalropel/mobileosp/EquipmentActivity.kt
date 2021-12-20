@@ -31,6 +31,7 @@ class EquipmentActivity : AppCompatActivity() {
 
         binding.btAddEquipment.setOnClickListener {
             Toast.makeText(this, "Już prawie", Toast.LENGTH_SHORT).show()
+            addEquipmentDialog.dismiss()
         }
 
         binding.btAddEquipmentCancel.setOnClickListener {
