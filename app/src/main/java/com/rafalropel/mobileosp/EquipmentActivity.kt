@@ -1,13 +1,14 @@
 package com.rafalropel.mobileosp
 
 import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.rafalropel.mobileosp.databinding.ActivityEquipmentBinding
 import com.rafalropel.mobileosp.databinding.AddEquipmentDialogBinding
 
 private lateinit var binding: ActivityEquipmentBinding
+
 class EquipmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityEquipmentBinding.inflate(layoutInflater)
@@ -22,7 +23,7 @@ class EquipmentActivity : AppCompatActivity() {
     }
 
 
-    private fun addEquipmentDialog(){
+    private fun addEquipmentDialog() {
         val addEquipmentDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
         val binding = AddEquipmentDialogBinding.inflate(layoutInflater)
         addEquipmentDialog.setContentView(binding.root)

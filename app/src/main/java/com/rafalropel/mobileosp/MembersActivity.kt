@@ -26,7 +26,7 @@ class MembersActivity : AppCompatActivity() {
     }
 
 
-    private fun addMemberDialog(){
+    private fun addMemberDialog() {
         val addMemberDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
 
         addMemberDialog.setCancelable(false)
@@ -40,6 +40,6 @@ class MembersActivity : AppCompatActivity() {
         binding.btAddMemberCancel.setOnClickListener {
             addMemberDialog.dismiss()
         }
-            addMemberDialog.show()
+        addMemberDialog.show()
     }
 }

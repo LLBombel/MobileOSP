@@ -1,9 +1,9 @@
 package com.rafalropel.mobileosp
 
 import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.rafalropel.mobileosp.databinding.ActivityMoneyFinancialBinding
 import com.rafalropel.mobileosp.databinding.AddFinancesDialogBinding
 
@@ -25,7 +25,7 @@ class MoneyFinancialActivity : AppCompatActivity() {
     }
 
 
-    private fun addFinancesDialog(){
+    private fun addFinancesDialog() {
 
         val addFinancesDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
         val binding = AddFinancesDialogBinding.inflate(layoutInflater)

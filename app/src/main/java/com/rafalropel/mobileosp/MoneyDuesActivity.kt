@@ -1,9 +1,9 @@
 package com.rafalropel.mobileosp
 
 import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.rafalropel.mobileosp.databinding.ActivityMoneyDuesBinding
 import com.rafalropel.mobileosp.databinding.AddDueDialogBinding
 
@@ -23,7 +23,7 @@ class MoneyDuesActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun addDueDialog(){
+    private fun addDueDialog() {
 
         val addDueDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
         val binding = AddDueDialogBinding.inflate(layoutInflater)

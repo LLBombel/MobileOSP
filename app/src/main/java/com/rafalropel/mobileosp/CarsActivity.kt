@@ -14,7 +14,7 @@ class CarsActivity : AppCompatActivity() {
         binding = ActivityCarsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
 
-        binding.fabAddCar.setOnClickListener{
+        binding.fabAddCar.setOnClickListener {
             addCarDialog()
 
         }
@@ -25,7 +25,7 @@ class CarsActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun addCarDialog(){
+    private fun addCarDialog() {
         val addCarDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
         addCarDialog.setCancelable(false)
         val binding = AddCarDialogBinding.inflate(layoutInflater)

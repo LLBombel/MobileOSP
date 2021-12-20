@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg2"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:gravity="center">
-
+    tools:context=".MainActivity">
 
 
     <Button
@@ -29,13 +28,13 @@
 
     <Button
         android:id="@+id/bt_Cars"
-        android:backgroundTint="@color/ButtonsColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_weight="1"
+        android:backgroundTint="@color/ButtonsColor"
         android:drawableTop="@drawable/ic_cars"
         android:text="@string/samochody"
         android:textColor="@color/TextColor"
@@ -44,13 +43,13 @@
 
     <Button
         android:id="@+id/bt_Equipment"
-        android:backgroundTint="@color/ButtonsColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_weight="1"
+        android:backgroundTint="@color/ButtonsColor"
         android:drawableTop="@drawable/ic_equipment"
         android:text="@string/sprzet"
         android:textColor="@color/TextColor"
@@ -59,7 +58,6 @@
 
     <Button
         android:id="@+id/bt_Money"
-        android:backgroundTint="@color/ButtonsColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -67,6 +65,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="30dp"
         android:layout_weight="1"
+        android:backgroundTint="@color/ButtonsColor"
         android:drawableTop="@drawable/ic_money"
         android:text="@string/kasa"
         android:textColor="@color/TextColor"
