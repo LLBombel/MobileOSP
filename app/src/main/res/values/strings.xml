@@ -13,4 +13,11 @@
     <string name="dodaj_samoch_d">Dodaj samochód</string>
     <string name="dodaj_sprz_t">Dodaj sprzęt</string>
     <string name="dodaj_sk_adk">Dodaj składkę</string>
+    <string name="dodaj_obr_t">Dodaj obrót</string>
+    <string name="obroty_bankowe">Obroty bankowe</string>
+    <string name="obroty_kasowe">Obroty kasowe</string>
+    <string name="w_tym">W TYM</string>
+    <string name="przychody">Przychody</string>
+    <string name="koszty">Koszty</string>
+    <string name="uwagi">Uwagi</string>
 </resources>
