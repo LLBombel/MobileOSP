@@ -1,11 +1,9 @@
 package com.rafalropel.mobileosp
 
-import android.app.Dialog
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.rafalropel.mobileosp.databinding.ActivityCarsBinding
-import com.rafalropel.mobileosp.databinding.AddCarDialogBinding
 
 private lateinit var binding: ActivityCarsBinding
 
@@ -15,7 +13,7 @@ class CarsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding.fabAddCar.setOnClickListener {
-            addCarDialog()
+            showCarsInput()
 
         }
 
@@ -25,21 +23,7 @@ class CarsActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun addCarDialog() {
-        val addCarDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
-        addCarDialog.setCancelable(false)
-        val binding = AddCarDialogBinding.inflate(layoutInflater)
-        addCarDialog.setContentView(binding.root)
-
-        binding.btAddCar.setOnClickListener {
-            Toast.makeText(this, "Już prawie", Toast.LENGTH_SHORT).show()
-            addCarDialog.dismiss()
-        }
-
-        binding.btAddCarCancel.setOnClickListener {
-            addCarDialog.dismiss()
-        }
-
-        addCarDialog.show()
+    private fun showCarsInput() {
+        binding.llCarsInput.visibility = View.VISIBLE
     }
 }

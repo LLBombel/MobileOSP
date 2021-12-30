@@ -1,11 +1,9 @@
 package com.rafalropel.mobileosp
 
-import android.app.Dialog
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.rafalropel.mobileosp.databinding.ActivityMoneyDuesBinding
-import com.rafalropel.mobileosp.databinding.AddDueDialogBinding
 
 
 private lateinit var binding: ActivityMoneyDuesBinding
@@ -16,34 +14,15 @@ class MoneyDuesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding.fabAddDues.setOnClickListener {
-            addDueDialog()
+            showDuesInput()
         }
 
 
         setContentView(binding.root)
     }
 
-    private fun addDueDialog() {
-
-        val addDueDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
-        val binding = AddDueDialogBinding.inflate(layoutInflater)
-        addDueDialog.setContentView(binding.root)
-        addDueDialog.setCancelable(false)
-
-        binding.btAddDue.setOnClickListener {
-
-            Toast.makeText(this, "Już prawie", Toast.LENGTH_SHORT).show()
-            addDueDialog.dismiss()
-
-        }
-
-        binding.btAddDCancelCancel.setOnClickListener {
-
-            addDueDialog.dismiss()
-
-        }
-
-        addDueDialog.show()
+    private fun showDuesInput() {
+        binding.llDuesInput.visibility = View.VISIBLE
     }
 
 }

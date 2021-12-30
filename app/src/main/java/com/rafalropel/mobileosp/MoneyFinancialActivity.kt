@@ -2,6 +2,7 @@ package com.rafalropel.mobileosp
 
 import android.app.Dialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafalropel.mobileosp.databinding.ActivityMoneyFinancialBinding
@@ -17,36 +18,16 @@ class MoneyFinancialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding.fabAddFinances.setOnClickListener {
-            addFinancesDialog()
+            showFinancesInput()
         }
 
 
         setContentView(binding.root)
     }
 
-
-    private fun addFinancesDialog() {
-
-        val addFinancesDialog = Dialog(this, R.style.ThemeOverlay_MaterialComponents)
-        val binding = AddFinancesDialogBinding.inflate(layoutInflater)
-        addFinancesDialog.setContentView(binding.root)
-        addFinancesDialog.setCancelable(false)
-
-
-        binding.btAddFinances.setOnClickListener {
-
-            Toast.makeText(this, "Już prawie", Toast.LENGTH_SHORT).show()
-            addFinancesDialog.dismiss()
-
-        }
-
-        binding.btAddfinancesCancel.setOnClickListener {
-
-            addFinancesDialog.dismiss()
-        }
-
-        addFinancesDialog.show()
-
+    private fun showFinancesInput(){
+        binding.llFinancesInput.visibility = View.VISIBLE
     }
+
 
 }

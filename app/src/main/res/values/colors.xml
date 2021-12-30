@@ -4,7 +4,7 @@
     <color name="ButtonsColor">#1a771f0a</color>
     <color name="FabColor">#e8301c</color>
     <color name="DialogBackgroundColor">#e8301c</color>
-    <color name="BoxStrokeColor">#781708</color>
+    <color name="BoxStrokeColor">#000000</color>
     <color name="LightGray">#D3D3D3</color>
 
 </resources>

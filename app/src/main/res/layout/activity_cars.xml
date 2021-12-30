@@ -6,17 +6,373 @@
     android:background="@drawable/ic_bg2"
     tools:context=".CarsActivity">
 
-    <TextView
-        android:id="@+id/tvCarsNoData"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ll_carsInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_gravity="center_vertical"
-        android:text="Brak dodanych samochodów"
-        android:textColor="@color/TextColor"
-        />
+        android:orientation="vertical"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/dodaj_samoch_d"
+            android:textColor="@color/TextColor"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nazwa"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarOwnName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarOwnName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nazwa własna"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarCodeName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarCodeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kryptonim"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numer operacyjny"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Amount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ilość"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarType"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rodzaj samochodu, np. lekki"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarTechnicalReviewDate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etTechnicalReviewDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Data ważności przeglądu"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarInsuranceDate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarInsuranceDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Data ważności ubezpieczenia"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarWeight"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masa całkowita"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarEnginePower"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarEnginePower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Moc silnika"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarTank"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarTank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pojemność zbiornika wodnego"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarFoam"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarFoam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ilość środka pianotwórczego"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarChassis"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarChassis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Producent podwozia"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarChassisYear"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarChassisYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rok produkcji podwozia"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarAmountOfPeople"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarAmoutOfPeople"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Maksymalna ilość osób w załodze"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_CarStorageLocation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:boxStrokeColor="@color/BoxStrokeColor"
+            app:hintTextColor="@color/LightGray">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCarStorageLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Miejsce przechowywania"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btAddCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/ButtonsColor"
+                android:gravity="center"
+                android:text="@string/dodaj"
+                android:textColor="@color/TextColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btAddCarCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/ButtonsColor"
+                android:gravity="center"
+                android:text="@string/anuluj"
+                android:textColor="@color/TextColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addCar"
