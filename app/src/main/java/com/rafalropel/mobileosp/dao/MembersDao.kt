@@ -8,13 +8,13 @@ import kotlinx.coroutines.flow.Flow
 interface MembersDao {
 
     @Insert
-    suspend fun insert(membersDao: MembersDao)
+    suspend fun insert(membersEntity: MembersEntity)
 
     @Update
-    suspend fun update(membersDao: MembersDao)
+    suspend fun update(membersEntity: MembersEntity)
 
     @Delete
-    suspend fun delete(membersDao: MembersDao)
+    suspend fun delete(membersEntity: MembersEntity)
 
     @Query("SELECT * FROM `members_table`")
     fun fetchAllMembers(): Flow<List<MembersEntity>>
