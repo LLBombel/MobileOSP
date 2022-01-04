@@ -6,12 +6,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rafalropel.mobileosp.databinding.MemberItemBinding
 import com.rafalropel.mobileosp.entities.MembersEntity
 
-class MembersAdapter(private val memberItems: ArrayList<MembersEntity>,
+class MembersAdapter(
+    private val memberItems: ArrayList<MembersEntity>,
 //private val updateListener:(id:Int)->Unit,
-private val deleteListener:(id:Int)->Unit
-):RecyclerView.Adapter<MembersAdapter.ViewHolder>() {
+    private val deleteListener: (id: Int) -> Unit
+) : RecyclerView.Adapter<MembersAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-      return ViewHolder(MemberItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(
+            MemberItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -24,16 +31,16 @@ private val deleteListener:(id:Int)->Unit
         }
 
         holder.ivDelete.setOnClickListener {
-           deleteListener.invoke(item.id)
+            deleteListener.invoke(item.id)
         }
 
     }
 
     override fun getItemCount(): Int {
-       return memberItems.size
+        return memberItems.size
     }
 
-    class ViewHolder(binding: MemberItemBinding): RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(binding: MemberItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val llMembers = binding.llMembers
         val tvMemberName = binding.tvMemberName
         val ivEdit = binding.ivEdit

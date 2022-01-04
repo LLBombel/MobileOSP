@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "finances-table")
 data class FinancesEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int =0,
+    val id: Int = 0,
 
     var lp: Int,
     val dateOfSave: String,

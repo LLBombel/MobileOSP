@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "cars_table")
-data class CarsEntity (
+data class CarsEntity(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
@@ -26,4 +26,4 @@ data class CarsEntity (
     val amountOfPeople: Int,
     var storageLocation: String
 
-        )
+)

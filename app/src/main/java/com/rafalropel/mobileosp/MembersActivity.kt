@@ -52,61 +52,95 @@ class MembersActivity : AppCompatActivity() {
         binding.rvMembersList.visibility = View.GONE
     }
 
-    private fun cancelMembersInput(){
+    private fun cancelMembersInput() {
         binding.llMembersInput.visibility = View.GONE
         binding.rvMembersList.visibility = View.VISIBLE
     }
 
-    private fun addMember(membersDao: MembersDao){
-        val name = binding.etMemberName.text.toString()
-        val rank = binding.etRank.text.toString()
-        val dateOfBirth = binding.etDateOfBirth.text.toString()
-        val placeOfBirth = binding.etPlaceOfBirth.text.toString()
-        val fatherName = binding.etFatherName.text.toString()
-        val PESEL = binding.etPESEL.text.toString()
-        val joinDate = binding.etDateOfJoin.text.toString()
-        val typeOfMember = binding.etTypeOfMember.text.toString()
-        val email = binding.etEmail.text.toString()
-        val phoneNumber = binding.etPhoneNumber.text.toString()
-        val street = binding.etStreet.text.toString()
-        val houseNumber = binding.etHouseNumber.text.toString()
-        val apartmentNumber = binding.etApartmentNumber.text.toString()
-        val city = binding.etCity.text.toString()
+    private fun addMember(membersDao: MembersDao) {
+        binding.apply {
+            val name = etMemberName.text.toString()
+            val rank = etRank.text.toString()
+            val dateOfBirth = etDateOfBirth.text.toString()
+            val placeOfBirth = etPlaceOfBirth.text.toString()
+            val fatherName = etFatherName.text.toString()
+            val PESEL = etPESEL.text.toString()
+            val joinDate = etDateOfJoin.text.toString()
+            val typeOfMember = etTypeOfMember.text.toString()
+            val email = etEmail.text.toString()
+            val phoneNumber = etPhoneNumber.text.toString()
+            val street = etStreet.text.toString()
+            val houseNumber = etHouseNumber.text.toString()
+            val apartmentNumber = etApartmentNumber.text.toString()
+            val city = etCity.text.toString()
+
+            if (name.isNotEmpty()) {
+                lifecycleScope.launch {
+                    membersDao.insert(
+                        MembersEntity(
+                            namesurname = name,
+                            rank = rank,
+                            dateOfBirth = dateOfBirth,
+                            placeOfBirth = placeOfBirth,
+                            fatherName = fatherName,
+                            pesel = PESEL,
+                            joinDate = joinDate,
+                            typeOfMember = typeOfMember,
+                            email = email,
+                            phoneNumber = phoneNumber,
+                            street = street,
+                            houseNumber = houseNumber,
+                            apartmentNumber =
+                            apartmentNumber,
+                            city = city
+                        )
+                    )
+
+                    binding.rvMembersList.visibility = View.VISIBLE
+                    binding.llMembersInput.visibility = View.GONE
 
 
+                    binding.apply {
+                        etMemberName.text?.clear()
+                        etRank.text?.clear()
+                        etDateOfBirth.text?.clear()
+                        etPlaceOfBirth.text?.clear()
+                        etFatherName.text?.clear()
+                        etPESEL.text?.clear()
+                        etDateOfJoin.text?.clear()
+                        etTypeOfMember.text?.clear()
+                        etEmail.text?.clear()
+                        etPhoneNumber.text?.clear()
+                        etStreet.text?.clear()
+                        etHouseNumber.text?.clear()
+                        etApartmentNumber.text?.clear()
+                        etCity.text?.clear()
+                    }
+                }
 
-        if(name.isNotEmpty()){
-            lifecycleScope.launch{
-                membersDao.insert(MembersEntity(namesurname = name, rank = rank, dateOfBirth = dateOfBirth,
-                placeOfBirth = placeOfBirth, fatherName = fatherName, pesel = PESEL, joinDate = joinDate, typeOfMember = typeOfMember,
-                email = email, phoneNumber = phoneNumber, street = street, houseNumber = houseNumber, apartmentNumber =
-                apartmentNumber, city = city))
-
-                binding.rvMembersList.visibility = View.VISIBLE
-                binding.llMembersInput.visibility = View.GONE
+            } else {
+                Toast.makeText(
+                    this@MembersActivity,
+                    "Przynajmniej imię i nazwisko musi być wypełnione",
+                    Toast.LENGTH_LONG
+                ).show()
             }
-
-        }else{
-            Toast.makeText(this, "Przynajmniej imię i nazwisko musi być wypełnione", Toast.LENGTH_LONG).show()
         }
-
-
-
 
 
     }
 
-    private fun deleteMember(id: Int, membersDao: MembersDao){
+    private fun deleteMember(id: Int, membersDao: MembersDao) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Czy na pewno usunąć członka?")
         builder.setCancelable(false)
-        builder.setPositiveButton("Tak"){dialogInterface, _ ->
+        builder.setPositiveButton("Tak") { dialogInterface, _ ->
             lifecycleScope.launch {
                 membersDao.delete(MembersEntity(id))
                 Toast.makeText(applicationContext, "Usunięto członka", Toast.LENGTH_SHORT).show()
             }
         }
-        builder.setNegativeButton("Nie"){dialogInterface, _->
+        builder.setNegativeButton("Nie") { dialogInterface, _ ->
             dialogInterface.dismiss()
 
         }
@@ -114,9 +148,10 @@ class MembersActivity : AppCompatActivity() {
         alertDialog.show()
     }
 
-    private fun displayMembers(membersList: ArrayList<MembersEntity>, membersDao: MembersDao){
-        if(membersList.isNotEmpty()){
-            val membersAdapter = MembersAdapter(membersList
+    private fun displayMembers(membersList: ArrayList<MembersEntity>, membersDao: MembersDao) {
+        if (membersList.isNotEmpty()) {
+            val membersAdapter = MembersAdapter(
+                membersList
             ) { deleteId ->
                 deleteMember(deleteId, membersDao)
             }
