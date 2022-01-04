@@ -10,11 +10,11 @@ class MembersAdapter(private val memberItems: ArrayList<MembersEntity>,
 //private val updateListener:(id:Int)->Unit,
 private val deleteListener:(id:Int)->Unit
 ):RecyclerView.Adapter<MembersAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MembersAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
       return ViewHolder(MemberItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
-    override fun onBindViewHolder(holder: MembersAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = memberItems[position]
 
         holder.tvMemberName.text = item.namesurname
