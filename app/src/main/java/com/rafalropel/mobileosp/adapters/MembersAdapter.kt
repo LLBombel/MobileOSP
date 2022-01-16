@@ -43,7 +43,7 @@ class MembersAdapter(
     class ViewHolder(binding: MemberItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val llMembers = binding.llMembers
         val tvMemberName = binding.tvMemberName
-        val ivEdit = binding.ivEdit
-        val ivDelete = binding.ivDelete
+        val ivEdit = binding.ivEditMember
+        val ivDelete = binding.ivDeleteMember
     }
 }

@@ -8,14 +8,14 @@ data class EquipmentEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
-    val equipmentName: String,
-    var equipmentOwnName: String,
-    var equipmentAmount: Int,
-    var equipmentStorageLocation: String,
-    val equipmentYear: Int,
-    val equipmentSerialNumber: String,
-    var equipmentInventoryNumber: String,
-    var equipmentTechnicalReviewDate: String,
-    val equipmentEnginePower: Int
+    val equipmentName: String="",
+    var equipmentOwnName: String="",
+    var equipmentAmount: String="",
+    var equipmentStorageLocation: String="",
+    val equipmentYear: String="",
+    val equipmentSerialNumber: String="",
+    var equipmentInventoryNumber: String="",
+    var equipmentTechnicalReviewDate: String="",
+    val equipmentEnginePower: String=""
 
 )

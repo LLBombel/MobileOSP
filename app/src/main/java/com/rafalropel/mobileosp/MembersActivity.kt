@@ -49,7 +49,7 @@ class MembersActivity : AppCompatActivity() {
 
     private fun showMembersInput() {
         binding.llMembersInput.visibility = View.VISIBLE
-        binding.rvMembersList.visibility = View.GONE
+     
     }
 
     private fun cancelMembersInput() {
@@ -96,11 +96,11 @@ class MembersActivity : AppCompatActivity() {
                         )
                     )
 
-                    binding.rvMembersList.visibility = View.VISIBLE
-                    binding.llMembersInput.visibility = View.GONE
+                    rvMembersList.visibility = View.VISIBLE
+                    llMembersInput.visibility = View.GONE
 
 
-                    binding.apply {
+
                         etMemberName.text?.clear()
                         etRank.text?.clear()
                         etDateOfBirth.text?.clear()
@@ -115,7 +115,7 @@ class MembersActivity : AppCompatActivity() {
                         etHouseNumber.text?.clear()
                         etApartmentNumber.text?.clear()
                         etCity.text?.clear()
-                    }
+
                 }
 
             } else {

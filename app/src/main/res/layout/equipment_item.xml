@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
-    android:gravity="center_vertical"
-    android:id="@+id/ll_members">
+    android:gravity="center"
+    android:id="@+id/ll_equipment">
 
 
     <TextView
-        android:id="@+id/tv_memberName"
+        android:id="@+id/tv_equipmentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000000"
         android:textSize="16sp"
-        tools:text="Imię i nazwisko"/>
+        tools:text="Nazwa samochodu"/>
 
 
     <ImageView
-        android:id="@+id/iv_editMember"
+        android:id="@+id/iv_editEquipment"
         android:contentDescription="image"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -29,11 +29,12 @@
         android:layout_marginStart="10dp"/>
 
     <ImageView
-        android:id="@+id/iv_deleteMember"
+        android:id="@+id/iv_deleteEquipment"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:scaleType="center"
         android:src="@drawable/ic_delete"
         android:layout_marginStart="10dp"/>
+
 </LinearLayout>

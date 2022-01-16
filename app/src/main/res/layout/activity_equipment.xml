@@ -11,6 +11,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ll_equipmentInput"
         android:layout_width="match_parent"
@@ -18,6 +22,7 @@
         android:visibility="invisible"
         tools:visibility="visible"
         android:orientation="vertical">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -238,7 +243,13 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_equipmentList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:visibility="visible"
+            android:visibility="gone"
+            />
     </LinearLayout>
     </ScrollView>
 

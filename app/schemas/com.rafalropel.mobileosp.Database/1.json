@@ -1,0 +1,498 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "9a5fac79e3b563b4203b62dbe81f09d2",
+    "entities": [
+      {
+        "tableName": "members_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `namesurname` TEXT NOT NULL, `rank` TEXT NOT NULL, `dateOfBirth` TEXT NOT NULL, `placeOfBirth` TEXT NOT NULL, `fatherName` TEXT NOT NULL, `pesel` TEXT NOT NULL, `joinDate` TEXT NOT NULL, `typeOfMember` TEXT NOT NULL, `email` TEXT NOT NULL, `phoneNumber` TEXT NOT NULL, `city` TEXT NOT NULL, `street` TEXT NOT NULL, `houseNumber` TEXT NOT NULL, `apartmentNumber` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "namesurname",
+            "columnName": "namesurname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rank",
+            "columnName": "rank",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateOfBirth",
+            "columnName": "dateOfBirth",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "placeOfBirth",
+            "columnName": "placeOfBirth",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fatherName",
+            "columnName": "fatherName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pesel",
+            "columnName": "pesel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "joinDate",
+            "columnName": "joinDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "typeOfMember",
+            "columnName": "typeOfMember",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phoneNumber",
+            "columnName": "phoneNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "street",
+            "columnName": "street",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "houseNumber",
+            "columnName": "houseNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "apartmentNumber",
+            "columnName": "apartmentNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "cars_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `carName` TEXT NOT NULL, `carOwnName` TEXT NOT NULL, `codeName` TEXT NOT NULL, `carNumber` TEXT NOT NULL, `amount` TEXT NOT NULL, `type` TEXT NOT NULL, `technicalReviewDate` TEXT NOT NULL, `insuranceDate` TEXT NOT NULL, `weight` TEXT NOT NULL, `enginePower` TEXT NOT NULL, `tank` TEXT NOT NULL, `foam` TEXT NOT NULL, `chassis` TEXT NOT NULL, `chassisYear` TEXT NOT NULL, `amountOfPeople` TEXT NOT NULL, `storageLocation` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "carName",
+            "columnName": "carName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "carOwnName",
+            "columnName": "carOwnName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codeName",
+            "columnName": "codeName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "carNumber",
+            "columnName": "carNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "technicalReviewDate",
+            "columnName": "technicalReviewDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "insuranceDate",
+            "columnName": "insuranceDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enginePower",
+            "columnName": "enginePower",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tank",
+            "columnName": "tank",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foam",
+            "columnName": "foam",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chassis",
+            "columnName": "chassis",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chassisYear",
+            "columnName": "chassisYear",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amountOfPeople",
+            "columnName": "amountOfPeople",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "storageLocation",
+            "columnName": "storageLocation",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "dues-table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `duesMemberName` TEXT NOT NULL, `declarationSignDate` TEXT NOT NULL, `declaredMoney` TEXT NOT NULL, `duesYear` INTEGER NOT NULL, `duesDate` TEXT NOT NULL, `duesMoney` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duesMemberName",
+            "columnName": "duesMemberName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "declarationSignDate",
+            "columnName": "declarationSignDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "declaredMoney",
+            "columnName": "declaredMoney",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duesYear",
+            "columnName": "duesYear",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duesDate",
+            "columnName": "duesDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duesMoney",
+            "columnName": "duesMoney",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "finances-table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `lp` INTEGER NOT NULL, `dateOfSave` TEXT NOT NULL, `financesType` TEXT NOT NULL, `bankIncome` TEXT NOT NULL, `bankOutcome` TEXT NOT NULL, `bankStatus` TEXT NOT NULL, `cashIncome` TEXT NOT NULL, `cashOutcome` TEXT NOT NULL, `cashStatus` TEXT NOT NULL, `normalMembersMoney` TEXT NOT NULL, `supportMembersMoney` TEXT NOT NULL, `grant` TEXT NOT NULL, `bankInterest` TEXT NOT NULL, `materials` TEXT NOT NULL, `services` TEXT NOT NULL, `bop` TEXT NOT NULL, `bussinesTravel` TEXT NOT NULL, `other` TEXT NOT NULL, `comments` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lp",
+            "columnName": "lp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateOfSave",
+            "columnName": "dateOfSave",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "financesType",
+            "columnName": "financesType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bankIncome",
+            "columnName": "bankIncome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bankOutcome",
+            "columnName": "bankOutcome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bankStatus",
+            "columnName": "bankStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cashIncome",
+            "columnName": "cashIncome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cashOutcome",
+            "columnName": "cashOutcome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cashStatus",
+            "columnName": "cashStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalMembersMoney",
+            "columnName": "normalMembersMoney",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "supportMembersMoney",
+            "columnName": "supportMembersMoney",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grant",
+            "columnName": "grant",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bankInterest",
+            "columnName": "bankInterest",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "materials",
+            "columnName": "materials",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "services",
+            "columnName": "services",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bop",
+            "columnName": "bop",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bussinesTravel",
+            "columnName": "bussinesTravel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "other",
+            "columnName": "other",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comments",
+            "columnName": "comments",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "equipment-table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `equipmentName` TEXT NOT NULL, `equipmentOwnName` TEXT NOT NULL, `equipmentAmount` TEXT NOT NULL, `equipmentStorageLocation` TEXT NOT NULL, `equipmentYear` TEXT NOT NULL, `equipmentSerialNumber` TEXT NOT NULL, `equipmentInventoryNumber` TEXT NOT NULL, `equipmentTechnicalReviewDate` TEXT NOT NULL, `equipmentEnginePower` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentName",
+            "columnName": "equipmentName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentOwnName",
+            "columnName": "equipmentOwnName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentAmount",
+            "columnName": "equipmentAmount",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentStorageLocation",
+            "columnName": "equipmentStorageLocation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentYear",
+            "columnName": "equipmentYear",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentSerialNumber",
+            "columnName": "equipmentSerialNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentInventoryNumber",
+            "columnName": "equipmentInventoryNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentTechnicalReviewDate",
+            "columnName": "equipmentTechnicalReviewDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipmentEnginePower",
+            "columnName": "equipmentEnginePower",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9a5fac79e3b563b4203b62dbe81f09d2')"
+    ]
+  }
+}
