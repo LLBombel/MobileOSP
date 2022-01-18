@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+    android:id="@+id/ll_members"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
     android:gravity="center_vertical"
-    android:id="@+id/ll_members">
+    android:orientation="horizontal"
+    android:padding="10dp">
 
 
     <TextView
@@ -15,25 +15,25 @@
         android:layout_height="wrap_content"
         android:textColor="#000000"
         android:textSize="16sp"
-        tools:text="Imię i nazwisko"/>
+        tools:text="Imię i nazwisko" />
 
 
     <ImageView
         android:id="@+id/iv_editMember"
-        android:contentDescription="image"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="image"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:scaleType="center"
-        android:src="@drawable/ic_edit"
-        android:layout_marginStart="10dp"/>
+        android:src="@drawable/ic_edit" />
 
     <ImageView
         android:id="@+id/iv_deleteMember"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="10dp"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:scaleType="center"
-        android:src="@drawable/ic_delete"
-        android:layout_marginStart="10dp"/>
+        android:src="@drawable/ic_delete" />
 </LinearLayout>

@@ -9,11 +9,11 @@ data class DuesEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
-    val duesMemberName: String="",
-    var declarationSignDate: String="",
-    var declaredMoney: String="",
-    val duesYear: String="",
-    val duesDate: String="",
-    val duesMoney: String=""
+    val duesMemberName: String = "",
+    var declarationSignDate: String = "",
+    var declaredMoney: String = "",
+    val duesYear: String = "",
+    val duesDate: String = "",
+    val duesMoney: String = ""
 
 )

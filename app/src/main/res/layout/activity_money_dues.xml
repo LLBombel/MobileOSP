@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/ic_bg2"
     tools:context=".MoneyDuesActivity">
 
@@ -11,187 +11,188 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/ll_duesInput"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/dodaj_sk_adk"
-            android:textColor="@color/TextColor"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_NameSurname"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ll_duesInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etNameSurname"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Imię i nazwisko/nazwa przedsiębiorstwa"
-                android:textSize="15sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_DeclarationDate"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etDeclarationDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Data podpisania deklaracji (członkowie wspierający)"
-                android:inputType="number"
-                android:textSize="15sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_MoneyDeclared"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etMoneyDeclared"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Kwota zadeklarowana(członkowie wspierający)"
-                android:inputType="number"
-                android:textSize="15sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Year"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Rok"
-                android:inputType="number"
-                android:textSize="15sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Date"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Data wpłaty"
-                android:inputType="number"
-                android:textSize="15sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_MoneyAmount"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etMoneyAmount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Kwota"
-                android:inputType="number"
-                android:textSize="15sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/btAddDue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/ButtonsColor"
-                android:gravity="center"
-                android:text="@string/dodaj"
-                android:textColor="@color/TextColor"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btAddDCancelCancel"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/ButtonsColor"
                 android:gravity="center"
-                android:text="@string/anuluj"
+                android:text="@string/dodaj_sk_adk"
                 android:textColor="@color/TextColor"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_NameSurname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etNameSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Imię i nazwisko/nazwa przedsiębiorstwa"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_DeclarationDate"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDeclarationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Data podpisania deklaracji (członkowie wspierający)"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_MoneyDeclared"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMoneyDeclared"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kwota zadeklarowana(członkowie wspierający)"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Year"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rok"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Date"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Data wpłaty"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_MoneyAmount"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMoneyAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kwota"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/btAddDue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/ButtonsColor"
+                    android:gravity="center"
+                    android:text="@string/dodaj"
+                    android:textColor="@color/TextColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btAddDCancelCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/ButtonsColor"
+                    android:gravity="center"
+                    android:text="@string/anuluj"
+                    android:textColor="@color/TextColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_duesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible" />
         </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_duesList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:visibility="visible"
-            android:visibility="gone"
-            />
-    </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -199,10 +200,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_fab"
         android:layout_margin="25dp"
         android:backgroundTint="@color/FabColor"
-        />
+        android:src="@drawable/ic_fab" />
 
 
 </FrameLayout>

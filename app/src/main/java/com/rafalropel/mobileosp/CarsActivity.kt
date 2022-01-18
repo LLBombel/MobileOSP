@@ -37,7 +37,7 @@ class CarsActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             carsDao.fetchALlCars().collect {
-               val list =  ArrayList(it)
+                val list = ArrayList(it)
                 displayCars(list, carsDao)
             }
         }

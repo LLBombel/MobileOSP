@@ -7,13 +7,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rafalropel.mobileosp.adapters.DuesAdapter
 import com.rafalropel.mobileosp.adapters.FinancesAdapter
-import com.rafalropel.mobileosp.dao.DuesDao
 import com.rafalropel.mobileosp.dao.FinancesDao
 import com.rafalropel.mobileosp.databinding.ActivityMoneyFinancialBinding
-import com.rafalropel.mobileosp.entities.DuesEntity
 import com.rafalropel.mobileosp.entities.FinancesEntity
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -34,6 +32,17 @@ class MoneyFinancialActivity : AppCompatActivity() {
             cancelFinancesInput()
         }
 
+
+        binding.btAddFinances.setOnClickListener {
+            addFinances(financesDao)
+        }
+
+        lifecycleScope.launch {
+            financesDao.fetchAllFinances().collect {
+                val list = ArrayList(it)
+                displayFinances(list, financesDao)
+            }
+        }
 
         setContentView(binding.root)
     }

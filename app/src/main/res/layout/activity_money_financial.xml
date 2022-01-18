@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/ic_bg2"
     tools:context=".MoneyFinancialActivity">
 
@@ -11,517 +11,517 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/ll_financesInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        android:orientation="vertical">
 
-
-        <TextView
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ll_financesInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
-            android:gravity="center"
-            android:text="@string/dodaj_obr_t"
-            android:textColor="@color/TextColor"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_LP"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etLP"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Lp."
-                android:inputType="number"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_DateOfSave"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etDateOfSave"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Data zapisu"
-                android:inputType="number"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Type"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Rodzaj i numer dowodu"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/obroty_bankowe"
-            android:textColor="@color/TextColor"
-            android:textStyle="bold" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_BankIncome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etBankIncome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Przychód"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_BankOutcome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etBankOutcome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Rozchód"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_BankStatus"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etBankStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Stan"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/obroty_kasowe"
-            android:textColor="@color/TextColor"
-            android:textStyle="bold" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_CashIncome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etCashIncome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Przychód"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_CashOutcome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etCashOutcome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Rozchód"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_CashStatus"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etCashStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Stan"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="@string/w_tym"
-            android:textColor="@color/TextColor"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/przychody"
-            android:textColor="@color/TextColor"
-            android:textStyle="bold" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_NormalMembersMoney"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etNormalMembersMoney"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Wpłaty członków zwyczajnych"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_SupportMembersMoney"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etSupportMembersMoney"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Wpłaty członków wspierających"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Grant"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etGrant"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Dotacje, subwencje"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_BankInterest"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etBankInterest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Odsetki bankowe"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/koszty"
-            android:textColor="@color/TextColor"
-            android:textStyle="bold" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Materials"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etMaterials"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Materiały"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Services"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etServices"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Usługi"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_BOP"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etBOP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Bezosob. fund płac"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_BussinessTravel"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etBussinessTravel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Podróże służbowe"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Other"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etOther"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Pozostałe koszty"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/uwagi"
-            android:textColor="@color/TextColor"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Comments"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:boxStrokeColor="@color/BoxStrokeColor"
-            app:hintTextColor="@color/LightGray">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etComments"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Uwagi"
-                android:textSize="15sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/btAddFinances"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/ButtonsColor"
+                android:layout_marginTop="15sp"
                 android:gravity="center"
-                android:text="@string/dodaj"
+                android:text="@string/dodaj_obr_t"
+                android:textColor="@color/TextColor"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_LP"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lp."
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_DateOfSave"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDateOfSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Data zapisu"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Type"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rodzaj i numer dowodu"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/obroty_bankowe"
+                android:textColor="@color/TextColor"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_BankIncome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBankIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Przychód"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_BankOutcome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBankOutcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rozchód"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_BankStatus"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBankStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Stan"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/obroty_kasowe"
+                android:textColor="@color/TextColor"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_CashIncome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCashIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Przychód"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_CashOutcome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCashOutcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rozchód"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_CashStatus"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCashStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Stan"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/w_tym"
+                android:textColor="@color/TextColor"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/przychody"
+                android:textColor="@color/TextColor"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_NormalMembersMoney"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etNormalMembersMoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Wpłaty członków zwyczajnych"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_SupportMembersMoney"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etSupportMembersMoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Wpłaty członków wspierających"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Grant"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etGrant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dotacje, subwencje"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_BankInterest"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBankInterest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Odsetki bankowe"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/koszty"
+                android:textColor="@color/TextColor"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Materials"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMaterials"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Materiały"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Services"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Usługi"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_BOP"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBOP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Bezosob. fund płac"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_BussinessTravel"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBussinessTravel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Podróże służbowe"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Other"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pozostałe koszty"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/uwagi"
                 android:textColor="@color/TextColor"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btAddfinancesCancel"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Comments"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/ButtonsColor"
-                android:gravity="center"
-                android:text="@string/anuluj"
-                android:textColor="@color/TextColor"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/BoxStrokeColor"
+                app:hintTextColor="@color/LightGray">
 
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Uwagi"
+                    android:textSize="15sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/btAddFinances"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/ButtonsColor"
+                    android:gravity="center"
+                    android:text="@string/dodaj"
+                    android:textColor="@color/TextColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btAddfinancesCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/ButtonsColor"
+                    android:gravity="center"
+                    android:text="@string/anuluj"
+                    android:textColor="@color/TextColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_financesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible" />
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_financesList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:visibility="visible"
-            android:visibility="gone"
-            />
-    </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -529,9 +529,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_fab"
         android:layout_margin="25dp"
         android:backgroundTint="@color/FabColor"
-        />
+        android:src="@drawable/ic_fab" />
 
 </FrameLayout>
