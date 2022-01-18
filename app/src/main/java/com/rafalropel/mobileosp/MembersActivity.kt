@@ -49,7 +49,7 @@ class MembersActivity : AppCompatActivity() {
 
     private fun showMembersInput() {
         binding.llMembersInput.visibility = View.VISIBLE
-     
+
     }
 
     private fun cancelMembersInput() {
