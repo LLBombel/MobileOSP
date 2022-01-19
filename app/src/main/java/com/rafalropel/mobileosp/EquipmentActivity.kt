@@ -46,7 +46,7 @@ class EquipmentActivity : AppCompatActivity() {
 
     private fun showEquipmentInput() {
         binding.llEquipmentInput.visibility = View.VISIBLE
-
+        binding.rvEquipmentList.visibility = View.GONE
 
     }
 

@@ -48,6 +48,7 @@ class CarsActivity : AppCompatActivity() {
 
     private fun showCarsInput() {
         binding.llCarsInput.visibility = View.VISIBLE
+        binding.rvCarsList.visibility = View.GONE
     }
 
     private fun cancelCarsInput() {

@@ -49,6 +49,7 @@ class MoneyDuesActivity : AppCompatActivity() {
 
     private fun showDuesInput() {
         binding.llDuesInput.visibility = View.VISIBLE
+        binding.rvDuesList.visibility = View.GONE
     }
 
     private fun cancelDuesInput() {

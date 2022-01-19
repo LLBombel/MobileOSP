@@ -49,6 +49,7 @@ class MoneyFinancialActivity : AppCompatActivity() {
 
     private fun showFinancesInput() {
         binding.llFinancesInput.visibility = View.VISIBLE
+        binding.rvFinancesList.visibility = View.GONE
     }
 
     private fun cancelFinancesInput() {

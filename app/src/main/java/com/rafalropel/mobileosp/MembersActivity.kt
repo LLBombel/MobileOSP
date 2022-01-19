@@ -49,6 +49,7 @@ class MembersActivity : AppCompatActivity() {
 
     private fun showMembersInput() {
         binding.llMembersInput.visibility = View.VISIBLE
+        binding.rvMembersList.visibility = View.GONE
 
     }
 

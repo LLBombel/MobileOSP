@@ -8,6 +8,14 @@
     android:background="@drawable/ic_bg2"
     tools:context=".EquipmentActivity">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_equipmentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -242,12 +250,7 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_equipmentList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                tools:visibility="visible" />
+
         </LinearLayout>
     </ScrollView>
 

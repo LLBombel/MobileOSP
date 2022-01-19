@@ -29,6 +29,7 @@ class CarsAdapter(
 
         holder.ivDeleteCar.setOnClickListener {
             deleteListener.invoke(item.id)
+
         }
     }
 

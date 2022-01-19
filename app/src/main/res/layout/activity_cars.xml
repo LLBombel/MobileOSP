@@ -7,9 +7,16 @@
     tools:context=".CarsActivity">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_carsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,6 +26,8 @@
             android:orientation="vertical"
             android:visibility="invisible"
             tools:visibility="visible">
+
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -372,12 +381,7 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_carsList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                tools:visibility="visible" />
+
 
         </LinearLayout>
     </ScrollView>
