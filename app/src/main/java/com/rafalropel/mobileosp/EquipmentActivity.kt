@@ -47,12 +47,14 @@ class EquipmentActivity : AppCompatActivity() {
     private fun showEquipmentInput() {
         binding.llEquipmentInput.visibility = View.VISIBLE
         binding.rvEquipmentList.visibility = View.GONE
+        binding.fabAddEquipment.visibility = View.GONE
 
     }
 
     private fun cancelEquipmentInput() {
         binding.rvEquipmentList.visibility = View.VISIBLE
         binding.llEquipmentInput.visibility = View.GONE
+        binding.fabAddEquipment.visibility = View.VISIBLE
 
     }
 
@@ -85,6 +87,7 @@ class EquipmentActivity : AppCompatActivity() {
                     )
                     rvEquipmentList.visibility = View.VISIBLE
                     llEquipmentInput.visibility = View.GONE
+                    fabAddEquipment.visibility = View.VISIBLE
 
                     etEquipmentName.text?.clear()
                     etEquipmentOwnName.text?.clear()

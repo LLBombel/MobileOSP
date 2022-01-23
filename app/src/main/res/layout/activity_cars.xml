@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg2"
     tools:context=".CarsActivity">
 
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_carsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
         tools:visibility="visible" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -384,15 +384,15 @@
 
 
         </LinearLayout>
-    </ScrollView>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addCar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="top|end"
         android:layout_margin="25dp"
         android:backgroundTint="@color/FabColor"
         android:src="@drawable/ic_fab" />
-
 </FrameLayout>
+</ScrollView>

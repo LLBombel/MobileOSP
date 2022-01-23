@@ -50,11 +50,13 @@ class MoneyDuesActivity : AppCompatActivity() {
     private fun showDuesInput() {
         binding.llDuesInput.visibility = View.VISIBLE
         binding.rvDuesList.visibility = View.GONE
+        binding.fabAddDues.visibility = View.GONE
     }
 
     private fun cancelDuesInput() {
         binding.llDuesInput.visibility = View.GONE
         binding.rvDuesList.visibility = View.VISIBLE
+        binding.fabAddDues.visibility = View.VISIBLE
     }
 
     private fun addDue(duesDao: DuesDao) {
@@ -81,6 +83,7 @@ class MoneyDuesActivity : AppCompatActivity() {
 
                     rvDuesList.visibility = View.VISIBLE
                     llDuesInput.visibility = View.GONE
+                    fabAddDues.visibility = View.VISIBLE
 
                     etNameSurname.text?.clear()
                     etDeclarationDate.text?.clear()

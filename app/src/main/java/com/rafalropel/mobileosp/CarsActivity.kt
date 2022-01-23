@@ -49,11 +49,13 @@ class CarsActivity : AppCompatActivity() {
     private fun showCarsInput() {
         binding.llCarsInput.visibility = View.VISIBLE
         binding.rvCarsList.visibility = View.GONE
+        binding.fabAddCar.visibility = View.GONE
     }
 
     private fun cancelCarsInput() {
         binding.llCarsInput.visibility = View.GONE
         binding.rvCarsList.visibility = View.VISIBLE
+        binding.fabAddCar.visibility = View.VISIBLE
     }
 
     private fun addCar(carsDao: CarsDao) {
@@ -99,6 +101,7 @@ class CarsActivity : AppCompatActivity() {
                     )
                     rvCarsList.visibility = View.VISIBLE
                     llCarsInput.visibility = View.GONE
+                    fabAddCar.visibility = View.VISIBLE
 
                     etCarName.text?.clear()
                     etCarOwnName.text?.clear()

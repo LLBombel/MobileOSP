@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg2"
     tools:context=".MainActivity">
 
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_membersList"
         android:layout_width="match_parent"
@@ -17,11 +19,9 @@
         tools:visibility="visible" />
 
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        <LinearLayout
             android:id="@+id/ll_membersInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -356,16 +356,16 @@
         </LinearLayout>
 
 
-    </ScrollView>
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addMembers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="top|end"
         android:layout_margin="25dp"
         android:backgroundTint="@color/FabColor"
-        android:src="@drawable/ic_fab"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:src="@drawable/ic_fab" />
 </FrameLayout>
+</ScrollView>

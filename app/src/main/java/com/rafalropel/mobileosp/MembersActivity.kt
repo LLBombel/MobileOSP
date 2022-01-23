@@ -50,12 +50,14 @@ class MembersActivity : AppCompatActivity() {
     private fun showMembersInput() {
         binding.llMembersInput.visibility = View.VISIBLE
         binding.rvMembersList.visibility = View.GONE
+        binding.fabAddMembers.visibility = View.GONE
 
     }
 
     private fun cancelMembersInput() {
         binding.llMembersInput.visibility = View.GONE
         binding.rvMembersList.visibility = View.VISIBLE
+        binding.fabAddMembers.visibility = View.VISIBLE
     }
 
     private fun addMember(membersDao: MembersDao) {
@@ -99,6 +101,7 @@ class MembersActivity : AppCompatActivity() {
 
                     rvMembersList.visibility = View.VISIBLE
                     llMembersInput.visibility = View.GONE
+                    fabAddMembers.visibility = View.VISIBLE
 
 
 

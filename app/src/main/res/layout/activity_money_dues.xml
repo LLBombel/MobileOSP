@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg2"
     tools:context=".MoneyDuesActivity">
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_duesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
         tools:visibility="visible" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/ll_duesInput"
@@ -24,6 +24,7 @@
             android:orientation="vertical"
             android:visibility="invisible"
             tools:visibility="visible">
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -68,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Data podpisania deklaracji (członkowie wspierający)"
-                    android:inputType="number"
+
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Kwota zadeklarowana(członkowie wspierający)"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -126,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Data wpłaty"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -145,7 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Kwota"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -193,16 +194,16 @@
 
 
         </LinearLayout>
-    </ScrollView>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addDues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="top|end"
         android:layout_margin="25dp"
         android:backgroundTint="@color/FabColor"
         android:src="@drawable/ic_fab" />
 
-
 </FrameLayout>
+</ScrollView>

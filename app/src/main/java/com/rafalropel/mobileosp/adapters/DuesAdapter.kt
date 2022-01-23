@@ -25,7 +25,12 @@ class DuesAdapter(
 
     override fun onBindViewHolder(holder: DuesAdapter.ViewHolder, position: Int) {
         val item = duesList[position]
-        holder.tvDueName.text = item.duesMemberName
+        holder.tvDueNameSurname.text = item.duesMemberName
+        holder.tvDueDeclarationSignDate.text = item.declarationSignDate
+        holder.tvDueDeclaredMoney.text = item.declaredMoney
+        holder.tvDueYear.text = item.duesYear
+        holder.tvDueDate.text = item.duesDate
+        holder.tvDueMoney.text = item.duesMoney
 
         holder.ivDeleteDue.setOnClickListener {
             deleteListener.invoke(item.id)
@@ -39,7 +44,13 @@ class DuesAdapter(
 
     class ViewHolder(binding: DueItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        val tvDueName = binding.tvDueName
+
+        val tvDueNameSurname = binding.tvDueNameSurname
+        val tvDueDeclarationSignDate = binding.tvDueDeclarationSignDate
+        val tvDueDeclaredMoney = binding.tvDueDeclaredMoney
+        val tvDueYear = binding.tvDueYear
+        val tvDueDate = binding.tvDueDate
+        val tvDueMoney = binding.tvDueMoney
         val llDues = binding.llDues
         val ivEditDue = binding.ivEditDue
         val ivDeleteDue = binding.ivDeleteDue

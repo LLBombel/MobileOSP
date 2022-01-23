@@ -50,11 +50,13 @@ class MoneyFinancialActivity : AppCompatActivity() {
     private fun showFinancesInput() {
         binding.llFinancesInput.visibility = View.VISIBLE
         binding.rvFinancesList.visibility = View.GONE
+        binding.fabAddFinances.visibility = View.GONE
     }
 
     private fun cancelFinancesInput() {
         binding.llFinancesInput.visibility = View.GONE
         binding.rvFinancesList.visibility = View.VISIBLE
+        binding.fabAddFinances.visibility = View.VISIBLE
     }
 
     private fun addFinances(financesDao: FinancesDao) {
@@ -106,6 +108,7 @@ class MoneyFinancialActivity : AppCompatActivity() {
                     )
                     rvFinancesList.visibility = View.VISIBLE
                     llFinancesInput.visibility = View.GONE
+                    fabAddFinances.visibility = View.VISIBLE
 
                     etLP.text?.clear()
                     etDateOfSave.text?.clear()
