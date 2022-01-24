@@ -26,6 +26,25 @@ class FinancesAdapter(
         val item = financesList[position]
 
         holder.tvLP.text = item.lp
+        holder.tvFinancesDate.text = item.dateOfSave
+        holder.tvFinancesType.text = item.financesType
+        holder.tvFinancesBankIncome.text = item.bankIncome
+        holder.tvFinancesBankOutcome.text = item.bankOutcome
+        holder.tvFinancesBankStatus.text = item.bankStatus
+        holder.tvFinancesCashIncome.text = item.cashIncome
+        holder.tvFinancesCashOutcome.text = item.cashOutcome
+        holder.tvFinancesCashStatus.text = item.cashStatus
+        holder.tvFinancesNormalMemberMoney.text = item.normalMembersMoney
+        holder.tvFinancesSupportMemberMoney.text = item.supportMembersMoney
+        holder.tvFinancesGrant.text = item.grant
+        holder.tvFinancesBankInterest.text = item.bankInterest
+        holder.tvFinancesMaterials.text = item.materials
+        holder.tvFinancesServices.text = item.services
+        holder.tvFinancesBOP.text = item.bop
+        holder.tvFinancesBussinessTravel.text = item.bussinesTravel
+        holder.tvFinancesOther.text = item.other
+        holder.tvFinancesComments.text = item.comments
+
 
         holder.ivDeleteFinances.setOnClickListener {
             deleteListener.invoke(item.id)
@@ -38,6 +57,24 @@ class FinancesAdapter(
 
     class ViewHolder(binding: FinancesItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val tvLP = binding.tvLP
+        val tvFinancesDate = binding.tvFinancesDate
+        val tvFinancesType = binding.tvFinancesType
+        val tvFinancesBankIncome = binding.tvFinancesBankIncome
+        val tvFinancesBankOutcome = binding.tvFinancesBankOutcome
+        val tvFinancesBankStatus = binding.tvFinancesBankStatus
+        val tvFinancesCashIncome = binding.tvFinancesCashIncome
+        val tvFinancesCashOutcome = binding.tvFinancesCashOutcome
+        val tvFinancesCashStatus = binding.tvFinancesBankStatus
+        val tvFinancesNormalMemberMoney = binding.tvFinancesNormalMemberMoney
+        val tvFinancesSupportMemberMoney = binding.tvFinancesSupportMemberMoney
+        val tvFinancesGrant = binding.tvFinancesGrant
+        val tvFinancesBankInterest = binding.tvFinancesBankInterest
+        val tvFinancesMaterials = binding.tvFinancesMaterials
+        val tvFinancesServices = binding.tvFinancesServices
+        val tvFinancesBOP = binding.tvFinancesBOP
+        val tvFinancesBussinessTravel = binding.tvFinancesBussinessTravel
+        val tvFinancesOther = binding.tvFinancesOther
+        val tvFinancesComments = binding.tvFinancesComments
         val ivEditFinances = binding.ivEditFinances
         val ivDeleteFinances = binding.ivDeleteFinances
         val llFinances = binding.llFinances

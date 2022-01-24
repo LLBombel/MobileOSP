@@ -185,7 +185,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Data ważności przeglądu"
-                    android:inputType="number"
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
