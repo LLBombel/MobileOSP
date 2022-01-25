@@ -8,17 +8,16 @@
     android:background="@drawable/ic_bg2"
     tools:context=".MainActivity">
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_membersList"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:layout_height="match_parent">
 
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_membersList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
 
         <LinearLayout
@@ -356,16 +355,13 @@
         </LinearLayout>
 
 
-
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_addMembers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_margin="25dp"
-        android:backgroundTint="@color/FabColor"
-        android:src="@drawable/ic_fab" />
-</FrameLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_addMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="25dp"
+            android:backgroundTint="@color/FabColor"
+            android:src="@drawable/ic_fab" />
+    </FrameLayout>
 </ScrollView>

@@ -8,7 +8,8 @@ import com.rafalropel.mobileosp.entities.CarsEntity
 
 class CarsAdapter(
     private val carItems: ArrayList<CarsEntity>,
-    private val deleteListener: (id: Int) -> Unit
+    private val deleteListener: (id: Int) -> Unit,
+    private val updateListener: (id: Int) -> Unit
 ) : RecyclerView.Adapter<CarsAdapter.ViewHolder>() {
 
 
@@ -45,6 +46,10 @@ class CarsAdapter(
         holder.ivDeleteCar.setOnClickListener {
             deleteListener.invoke(item.id)
 
+        }
+
+        holder.ivEditCar.setOnClickListener {
+            updateListener.invoke(item.id)
         }
     }
 

@@ -8,7 +8,7 @@ import com.rafalropel.mobileosp.entities.MembersEntity
 
 class MembersAdapter(
     private val memberItems: ArrayList<MembersEntity>,
-//private val updateListener:(id:Int)->Unit,
+private val updateListener:(id:Int)->Unit,
     private val deleteListener: (id: Int) -> Unit
 ) : RecyclerView.Adapter<MembersAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,7 +40,7 @@ class MembersAdapter(
         holder.tvMembersApartmentNumber.text = item.apartmentNumber
 
         holder.ivEdit.setOnClickListener {
-            //updateListener.invoke(item.id)
+            updateListener.invoke(item.id)
         }
 
         holder.ivDelete.setOnClickListener {

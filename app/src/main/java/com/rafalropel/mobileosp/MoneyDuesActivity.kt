@@ -1,5 +1,6 @@
 package com.rafalropel.mobileosp
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,12 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rafalropel.mobileosp.adapters.DuesAdapter
-import com.rafalropel.mobileosp.adapters.EquipmentAdapter
 import com.rafalropel.mobileosp.dao.DuesDao
-import com.rafalropel.mobileosp.dao.EquipmentDao
 import com.rafalropel.mobileosp.databinding.ActivityMoneyDuesBinding
+import com.rafalropel.mobileosp.databinding.DueEditDialogBinding
 import com.rafalropel.mobileosp.entities.DuesEntity
-import com.rafalropel.mobileosp.entities.EquipmentEntity
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -36,12 +35,12 @@ class MoneyDuesActivity : AppCompatActivity() {
             addDue(duesDao)
         }
 
-         lifecycleScope.launch {
-             duesDao.fetchAllDues().collect {
-                 val list = ArrayList(it)
-                 displayDues(list, duesDao)
-             }
-         }
+        lifecycleScope.launch {
+            duesDao.fetchAllDues().collect {
+                val list = ArrayList(it)
+                displayDues(list, duesDao)
+            }
+        }
 
 
         setContentView(binding.root)
@@ -126,15 +125,69 @@ class MoneyDuesActivity : AppCompatActivity() {
         duesDao: DuesDao
     ) {
         if (duesList.isNotEmpty()) {
-            val duesAdapter = DuesAdapter(
-                duesList
-            ) { deleteId ->
+            val duesAdapter = DuesAdapter(duesList, { deleteId ->
                 deleteDue(deleteId, duesDao)
-            }
+            }, { updateId ->
+                updateDues(updateId, duesDao)
+            })
+
 
             binding.rvDuesList.layoutManager = LinearLayoutManager(this)
             binding.rvDuesList.adapter = duesAdapter
             binding.rvDuesList.visibility = View.VISIBLE
         }
+    }
+
+    private fun updateDues(id: Int, duesDao: DuesDao) {
+        val updateDialog = Dialog(this, R.style.ThemeOverlay_AppCompat)
+        updateDialog.setCancelable(false)
+        val binding = DueEditDialogBinding.inflate(layoutInflater)
+        updateDialog.setContentView(binding.root)
+
+        lifecycleScope.launch {
+            duesDao.fetchDuesById(id).collect {
+
+                binding.etMemberName.setText(it.duesMemberName)
+                binding.etDeclarationSignDate.setText(it.declarationSignDate)
+                binding.etDeclaredMoney.setText(it.declaredMoney)
+                binding.etDueYear.setText(it.duesYear)
+                binding.etDueDate.setText(it.duesDate)
+                binding.etDueMoney.setText(it.duesMoney)
+            }
+        }
+
+
+        binding.btnEditDueSave.setOnClickListener {
+            val memberName = binding.etMemberName.text.toString()
+            val declarationSignDate = binding.etDeclarationSignDate.text.toString()
+            val declaredMoney = binding.etDeclaredMoney.text.toString()
+            val dueYear = binding.etDueYear.text.toString()
+            val dueDate = binding.etDueDate.text.toString()
+            val dueMoney = binding.etDueMoney.text.toString()
+
+
+            lifecycleScope.launch {
+                duesDao.update(
+                    DuesEntity(
+                        id,
+                        memberName,
+                        declarationSignDate,
+                        declaredMoney,
+                        dueYear,
+                        dueDate,
+                        dueMoney
+                    )
+                )
+                Toast.makeText(applicationContext, "Zaktualizowano pozycję", Toast.LENGTH_LONG)
+                    .show()
+                updateDialog.dismiss()
+            }
+
+        }
+
+        binding.btnEditDueCancel.setOnClickListener {
+            updateDialog.dismiss()
+        }
+        updateDialog.show()
     }
 }

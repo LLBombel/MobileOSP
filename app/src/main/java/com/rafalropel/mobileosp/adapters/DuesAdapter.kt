@@ -8,7 +8,8 @@ import com.rafalropel.mobileosp.entities.DuesEntity
 
 class DuesAdapter(
     private val duesList: ArrayList<DuesEntity>,
-    private val deleteListener: (id: Int) -> Unit
+    private val deleteListener: (id: Int) -> Unit,
+    private val updateListener: (id: Int) -> Unit
 ) :
     RecyclerView.Adapter<DuesAdapter.ViewHolder>() {
 
@@ -34,6 +35,10 @@ class DuesAdapter(
 
         holder.ivDeleteDue.setOnClickListener {
             deleteListener.invoke(item.id)
+        }
+
+        holder.ivEditDue.setOnClickListener {
+            updateListener.invoke(item.id)
         }
 
     }

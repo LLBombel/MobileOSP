@@ -8,7 +8,8 @@ import com.rafalropel.mobileosp.entities.EquipmentEntity
 
 class EquipmentAdapter(
     private val equipmentItems: ArrayList<EquipmentEntity>,
-    private val deleteListener: (id: Int) -> Unit
+    private val deleteListener: (id: Int) -> Unit,
+    private val updateListener: (id: Int) -> Unit
 ) :
     RecyclerView.Adapter<EquipmentAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipmentAdapter.ViewHolder {
@@ -38,6 +39,10 @@ class EquipmentAdapter(
 
         holder.ivDeleteEquipment.setOnClickListener {
             deleteListener.invoke(item.id)
+        }
+
+        holder.ivEditEquipment.setOnClickListener {
+            updateListener.invoke(item.id)
         }
     }
 

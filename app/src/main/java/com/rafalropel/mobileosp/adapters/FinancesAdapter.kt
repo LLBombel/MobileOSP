@@ -8,7 +8,8 @@ import com.rafalropel.mobileosp.entities.FinancesEntity
 
 class FinancesAdapter(
     private val financesList: ArrayList<FinancesEntity>,
-    private val deleteListener: (id: Int) -> Unit
+    private val deleteListener: (id: Int) -> Unit,
+    private val updateListener: (id: Int) -> Unit
 ) : RecyclerView.Adapter<FinancesAdapter.ViewHolder>() {
 
 
@@ -49,6 +50,10 @@ class FinancesAdapter(
         holder.ivDeleteFinances.setOnClickListener {
             deleteListener.invoke(item.id)
         }
+
+        holder.ivEditFinances.setOnClickListener {
+            updateListener.invoke(item.id)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -64,7 +69,7 @@ class FinancesAdapter(
         val tvFinancesBankStatus = binding.tvFinancesBankStatus
         val tvFinancesCashIncome = binding.tvFinancesCashIncome
         val tvFinancesCashOutcome = binding.tvFinancesCashOutcome
-        val tvFinancesCashStatus = binding.tvFinancesBankStatus
+        val tvFinancesCashStatus = binding.tvFinancesCashStatus
         val tvFinancesNormalMemberMoney = binding.tvFinancesNormalMemberMoney
         val tvFinancesSupportMemberMoney = binding.tvFinancesSupportMemberMoney
         val tvFinancesGrant = binding.tvFinancesGrant

@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg2"
     tools:context=".MoneyDuesActivity">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_duesList"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_duesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -196,14 +198,14 @@
         </LinearLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_addDues"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_margin="25dp"
-        android:backgroundTint="@color/FabColor"
-        android:src="@drawable/ic_fab" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_addDues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="25dp"
+            android:backgroundTint="@color/FabColor"
+            android:src="@drawable/ic_fab" />
 
-</FrameLayout>
+    </FrameLayout>
 </ScrollView>

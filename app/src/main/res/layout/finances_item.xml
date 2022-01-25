@@ -254,10 +254,35 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/financesLayout"
+        android:layout_below="@+id/financesLayoutEight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Stan: "
+            android:textColor="#000000"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tv_financesCashStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/financesLayoutNine"
-        android:layout_below="@+id/financesLayoutEight"
+        android:layout_below="@+id/financesLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -518,7 +543,7 @@
         android:layout_below="@+id/financesLayoutEighteen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp">
     <ImageView

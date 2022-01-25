@@ -1,5 +1,6 @@
 package com.rafalropel.mobileosp
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rafalropel.mobileosp.adapters.EquipmentAdapter
 import com.rafalropel.mobileosp.dao.EquipmentDao
 import com.rafalropel.mobileosp.databinding.ActivityEquipmentBinding
+import com.rafalropel.mobileosp.databinding.EquipmentEditDialogBinding
 import com.rafalropel.mobileosp.entities.EquipmentEntity
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -134,15 +136,79 @@ class EquipmentActivity : AppCompatActivity() {
         equipmentDao: EquipmentDao
     ) {
         if (equipmentList.isNotEmpty()) {
-            val equipmentAdapter = EquipmentAdapter(
-                equipmentList
-            ) { deleteId ->
+            val equipmentAdapter = EquipmentAdapter(equipmentList, {
+                deleteId ->
                 deleteEquipment(deleteId, equipmentDao)
-            }
+            }, {
+                updateId ->
+                updateEquipment(updateId, equipmentDao)
+            })
 
             binding.rvEquipmentList.layoutManager = LinearLayoutManager(this)
             binding.rvEquipmentList.adapter = equipmentAdapter
             binding.rvEquipmentList.visibility = View.VISIBLE
         }
     }
-}
+
+    private fun updateEquipment(id: Int, equipmentDao: EquipmentDao) {
+        val updateDialog = Dialog(this, R.style.ThemeOverlay_AppCompat)
+        updateDialog.setCancelable(false)
+        val binding = EquipmentEditDialogBinding.inflate(layoutInflater)
+        updateDialog.setContentView(binding.root)
+
+
+        lifecycleScope.launch {
+            equipmentDao.fetchEquipmentById(id).collect {
+                binding.etEquipmentName.setText(it.equipmentName)
+                binding.etEquipmentOwnName.setText(it.equipmentOwnName)
+                binding.etEquipmentAmount.setText(it.equipmentAmount)
+                binding.etEquipmentStorageLocation.setText(it.equipmentStorageLocation)
+                binding.etEquipmentYear.setText(it.equipmentYear)
+                binding.etEquipmentSerialNumber.setText(it.equipmentSerialNumber)
+                binding.etEquipmentInventoryNumber.setText(it.equipmentInventoryNumber)
+                binding.etEquipmentTechnicalReviewDate.setText(it.equipmentTechnicalReviewDate)
+                binding.etEquipmentPower.setText(it.equipmentEnginePower)
+            }
+        }
+
+            binding.btnEditEquipmentCancel.setOnClickListener {
+                updateDialog.dismiss()
+            }
+
+            binding.btnEditEquipmentSave.setOnClickListener {
+                val equipmentName = binding.etEquipmentName.text.toString()
+                val equipmentOwnName = binding.etEquipmentOwnName.text.toString()
+                val equipmentAmount = binding.etEquipmentAmount.text.toString()
+                val equipmentStorageLocation = binding.etEquipmentStorageLocation.text.toString()
+                val equipmentYear = binding.etEquipmentYear.text.toString()
+                val equipmentSerialNumber = binding.etEquipmentSerialNumber.text.toString()
+                val equipmentInventoryNumber = binding.etEquipmentInventoryNumber.text.toString()
+                val equipmentTechnicalReviewDate = binding.etEquipmentTechnicalReviewDate.text.toString()
+                val equipmentPower = binding.etEquipmentPower.text.toString()
+
+
+
+                lifecycleScope.launch {
+                    equipmentDao.update(
+                        EquipmentEntity(
+                            id,
+                            equipmentName,
+                            equipmentOwnName,
+                            equipmentAmount,
+                            equipmentStorageLocation,
+                            equipmentYear,
+                            equipmentSerialNumber,
+                            equipmentInventoryNumber,
+                            equipmentTechnicalReviewDate,
+                            equipmentPower
+                        )
+                    )
+                    Toast.makeText(applicationContext, "Zaktualizowano sprzęt,", Toast.LENGTH_LONG).show()
+                    updateDialog.dismiss()
+                }
+
+            }
+        updateDialog.show()
+        }
+
+    }

@@ -1,5 +1,6 @@
 package com.rafalropel.mobileosp
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rafalropel.mobileosp.adapters.FinancesAdapter
 import com.rafalropel.mobileosp.dao.FinancesDao
 import com.rafalropel.mobileosp.databinding.ActivityMoneyFinancialBinding
+import com.rafalropel.mobileosp.databinding.FinancesEditDialogBinding
 import com.rafalropel.mobileosp.entities.FinancesEntity
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -165,15 +167,103 @@ class MoneyFinancialActivity : AppCompatActivity() {
         financesDao: FinancesDao
     ) {
         if (financesList.isNotEmpty()) {
-            val financesAdapter = FinancesAdapter(
-                financesList
-            ) { deleteId ->
-                deleteFinances(deleteId, financesDao)
-            }
+          val financesAdapter = FinancesAdapter(financesList, {
+              deleteId ->
+              deleteFinances(deleteId, financesDao)
+          }, {
+              updateId ->
+              updateFinances(updateId, financesDao)
+          })
 
             binding.rvFinancesList.layoutManager = LinearLayoutManager(this)
             binding.rvFinancesList.adapter = financesAdapter
             binding.rvFinancesList.visibility = View.VISIBLE
         }
+    }
+
+    private fun updateFinances(id: Int, financesDao: FinancesDao) {
+        val updateDialog = Dialog(this, R.style.ThemeOverlay_AppCompat)
+        updateDialog.setCancelable(false)
+        val binding = FinancesEditDialogBinding.inflate(layoutInflater)
+        updateDialog.setContentView(binding.root)
+
+        lifecycleScope.launch {
+            financesDao.fetchFinancesById(id).collect {
+                binding.etFinancesLP.setText(it.lp)
+                binding.etFinancesDateOfSave.setText(it.dateOfSave)
+                binding.etFinancesType.setText(it.financesType)
+                binding.etFinancesBankIncome.setText(it.bankIncome)
+                binding.etFinancesBankOutcome.setText(it.bankOutcome)
+                binding.etFinancesCashIncome.setText(it.cashIncome)
+                binding.etFinancesCashOutcome.setText(it.cashOutcome)
+                binding.etFinancesCashStatus.setText(it.cashStatus)
+                binding.etFinancesNormalMembersMoney.setText(it.normalMembersMoney)
+                binding.etFinancesSupportMembersMoney.setText(it.supportMembersMoney)
+                binding.etFinancesGrant.setText(it.grant)
+                binding.etFinancesBankInterest.setText(it.bankInterest)
+                binding.etFinancesMaterials.setText(it.materials)
+                binding.etFinancesServices.setText(it.services)
+                binding.etFinancesBOP.setText(it.bop)
+                binding.etFinancesBusinessTravel.setText(it.bussinesTravel)
+                binding.etFinancesOther.setText(it.other)
+                binding.etFinancesComments.setText(it.comments)
+            }
+        }
+
+        binding.btnEditFinancesCancel.setOnClickListener {
+            updateDialog.dismiss()
+        }
+
+        binding.btnEditFinancesSave.setOnClickListener {
+            val financesLP = binding.etFinancesLP.text.toString()
+            val dateOfSave = binding.etFinancesDateOfSave.text.toString()
+            val type = binding.etFinancesType.text.toString()
+            val bankIncome = binding.etFinancesBankIncome.text.toString()
+            val bankOutcome = binding.etFinancesBankOutcome.text.toString()
+            val bankStatus = binding.etFinancesBankStatus.text.toString()
+            val cashIncome = binding.etFinancesCashIncome.text.toString()
+            val cashOutcome = binding.etFinancesCashOutcome.text.toString()
+            val cashStatus = binding.etFinancesCashStatus.text.toString()
+            val normalMembersMoney = binding.etFinancesNormalMembersMoney.text.toString()
+            val supportMembersMoney = binding.etFinancesSupportMembersMoney.text.toString()
+            val grant = binding.etFinancesGrant.text.toString()
+            val bankInterest = binding.etFinancesBankInterest.text.toString()
+            val materials = binding.etFinancesMaterials.text.toString()
+            val services = binding.etFinancesServices.text.toString()
+            val bop = binding.etFinancesBOP.text.toString()
+            val businessTravel = binding.etFinancesBusinessTravel.text.toString()
+            val other = binding.etFinancesOther.text.toString()
+            val comments = binding.etFinancesComments.text.toString()
+
+
+            lifecycleScope.launch {
+                financesDao.update(
+                    FinancesEntity(
+                        id,
+                        financesLP,
+                        dateOfSave,
+                        type,
+                        bankIncome,
+                        bankOutcome,
+                        bankStatus,
+                        cashIncome,
+                        cashOutcome,
+                        cashStatus,
+                        normalMembersMoney,
+                        supportMembersMoney,
+                        grant,
+                        bankInterest,
+                        materials,
+                        services,
+                        bop,
+                        businessTravel,
+                        other,
+                        comments
+                    ))
+                Toast.makeText(applicationContext, "Zaktualizowano pozycję", Toast.LENGTH_LONG).show()
+                updateDialog.dismiss()
+            }
+        }
+        updateDialog.show()
     }
 }

@@ -1,5 +1,6 @@
 package com.rafalropel.mobileosp
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rafalropel.mobileosp.adapters.MembersAdapter
 import com.rafalropel.mobileosp.dao.MembersDao
 import com.rafalropel.mobileosp.databinding.ActivityMembersBinding
+import com.rafalropel.mobileosp.databinding.MemberEditDialogBinding
 import com.rafalropel.mobileosp.entities.MembersEntity
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -105,20 +107,20 @@ class MembersActivity : AppCompatActivity() {
 
 
 
-                        etMemberName.text?.clear()
-                        etRank.text?.clear()
-                        etDateOfBirth.text?.clear()
-                        etPlaceOfBirth.text?.clear()
-                        etFatherName.text?.clear()
-                        etPESEL.text?.clear()
-                        etDateOfJoin.text?.clear()
-                        etTypeOfMember.text?.clear()
-                        etEmail.text?.clear()
-                        etPhoneNumber.text?.clear()
-                        etStreet.text?.clear()
-                        etHouseNumber.text?.clear()
-                        etApartmentNumber.text?.clear()
-                        etCity.text?.clear()
+                    etMemberName.text?.clear()
+                    etRank.text?.clear()
+                    etDateOfBirth.text?.clear()
+                    etPlaceOfBirth.text?.clear()
+                    etFatherName.text?.clear()
+                    etPESEL.text?.clear()
+                    etDateOfJoin.text?.clear()
+                    etTypeOfMember.text?.clear()
+                    etEmail.text?.clear()
+                    etPhoneNumber.text?.clear()
+                    etStreet.text?.clear()
+                    etHouseNumber.text?.clear()
+                    etApartmentNumber.text?.clear()
+                    etCity.text?.clear()
 
                 }
 
@@ -154,15 +156,89 @@ class MembersActivity : AppCompatActivity() {
 
     private fun displayMembers(membersList: ArrayList<MembersEntity>, membersDao: MembersDao) {
         if (membersList.isNotEmpty()) {
-            val membersAdapter = MembersAdapter(
-                membersList
-            ) { deleteId ->
+            val membersAdapter = MembersAdapter(membersList, {
+                updateId ->
+                updateMember(updateId, membersDao)
+            }, {
+                deleteId ->
                 deleteMember(deleteId, membersDao)
-            }
-
+            })
             binding.rvMembersList.layoutManager = LinearLayoutManager(this)
             binding.rvMembersList.adapter = membersAdapter
             binding.rvMembersList.visibility = View.VISIBLE
         }
+    }
+
+    private fun updateMember(id: Int, membersDao: MembersDao) {
+        val updateDialog = Dialog(this, R.style.ThemeOverlay_AppCompat)
+        updateDialog.setCancelable(false)
+        val binding = MemberEditDialogBinding.inflate(layoutInflater)
+        updateDialog.setContentView(binding.root)
+
+        lifecycleScope.launch {
+            membersDao.fetchMembersById(id).collect {
+                binding.etMemberNameSurname.setText(it.namesurname)
+                binding.etMemberRank.setText(it.rank)
+                binding.etMemberDateOfBirth.setText(it.dateOfBirth)
+                binding.etMemberPlaceOfBirth.setText(it.placeOfBirth)
+                binding.etMemberFatherName.setText(it.fatherName)
+                binding.etMemberPESEL.setText(it.pesel)
+                binding.etMemberJoinDate.setText(it.joinDate)
+                binding.etMemberType.setText(it.typeOfMember)
+                binding.etMemberEmail.setText(it.email)
+                binding.etMemberPhoneNumber.setText(it.phoneNumber)
+                binding.etMemberCity.setText(it.city)
+                binding.etMemberStreet.setText(it.street)
+                binding.etMemberHouseNumber.setText(it.houseNumber)
+                binding.etMemberApartmentNumber.setText(it.apartmentNumber)
+
+            }
+        }
+        binding.btnEditMemberSave.setOnClickListener {
+            val nameSurname = binding.etMemberNameSurname.text.toString()
+            val rank = binding.etMemberRank.text.toString()
+            val dateOfBirth = binding.etMemberDateOfBirth.text.toString()
+            val placeOfBirth = binding.etMemberPlaceOfBirth.text.toString()
+            val fatherName = binding.etMemberFatherName.text.toString()
+            val pesel = binding.etMemberPESEL.text.toString()
+            val joinDate = binding.etMemberJoinDate.text.toString()
+            val type = binding.etMemberType.text.toString()
+            val email = binding.etMemberEmail.text.toString()
+            val phoneNumber = binding.etMemberPhoneNumber.text.toString()
+            val city = binding.etMemberCity.text.toString()
+            val street = binding.etMemberStreet.text.toString()
+            val houseNumber = binding.etMemberHouseNumber.text.toString()
+            val apartmentNumber = binding.etMemberApartmentNumber.text.toString()
+
+
+            lifecycleScope.launch {
+                membersDao.update(
+                    MembersEntity(
+                        id,
+                        nameSurname,
+                        rank,
+                        dateOfBirth,
+                        placeOfBirth,
+                        fatherName,
+                        pesel,
+                        joinDate,
+                        type,
+                        email,
+                        phoneNumber,
+                        city,
+                        street,
+                        houseNumber,
+                        apartmentNumber
+                    )
+                )
+                Toast.makeText(applicationContext, "Zaktualizowano członka", Toast.LENGTH_LONG).show()
+                updateDialog.dismiss()
+            }
+        }
+
+        binding.btnEditMemberCancel.setOnClickListener {
+            updateDialog.dismiss()
+        }
+        updateDialog.show()
     }
 }
